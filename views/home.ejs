@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <!---<link rel="stylesheet" href="/css/login.css">-->
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <% if ( SuccessMsg.length > 0 ) { %>
+            <div class="alert alert-success offset-md-2 col-md-7 text-center" role="alert">
+                <p>Message:
+                    <%= SuccessMsg %>
+                </p>
+            </div>
+            <% } %>
+                <% if ( ErrorMsg.length > 0 ) { %>
+                    <div class="alert alert-danger offset-md-2 col-md-7 text-center" role="alert">
+                        <p>Message:
+                            <%= ErrorMsg %>
+                        </p>
+                    </div>
+                    <% } %>
+    </div>
+    <div>
+        <h3>your username is:
+            <%= data[0].username %>
+        </h3>
+    </div>
+    <div>
+        <h3>your encrypted passowd is:
+            <%= data[0].password %>
+        </h3>
+    </div>
+    <div>
+        <h3>your userid is:
+            <%= data[0].user_id %>
+        </h3>
+    </div>
+    <div>
+        <form id="login-form" class="form" action="/home/<%=data[0].user_id %>" method="post">
+            <input type="submit" name="submit" class="btn btn-info btn-md" value="delete">
+        </form>
+    </div>
+
+
+</body>
+
+</html>
